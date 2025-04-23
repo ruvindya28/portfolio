@@ -35,13 +35,13 @@ export default function Education() {
       certUrl: "#" // Add actual certificate URL here
     },
     {
-      "title": "UI/UX Design",
-      "provider": "DP Education",
-      "year": "2025",
-      "description": "Google UX Design Professional Certificate",
-      "category": "design",
-      "certUrl": "https://www.dpitcampus.lk/lms/mod/customcert/view.php?id=1749&downloadown=1",  
-      "image": dp_figma
+      title: "UI/UX Design",
+      provider: "DP Education",
+      year: "2025",
+      description: "Google UX Design Professional Certificate",
+      category: "design",
+      certUrl: "https://www.dpitcampus.lk/lms/mod/customcert/view.php?id=1749&downloadown=1",  
+      image: dp_figma
     },
     
     {

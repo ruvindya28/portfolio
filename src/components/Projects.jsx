@@ -13,6 +13,9 @@ import {
   faMobileScreen
 } from '@fortawesome/free-solid-svg-icons';
 import petcare from "../assets/petcare.png";
+import railway from "../assets/railway.png";
+import Cover8 from "../assets/Cover8.png";
+import interial from "../assets/interial.png";
 
 export default function Projects() {
   const [currentCategory, setCurrentCategory] = useState('All');
@@ -32,7 +35,7 @@ export default function Projects() {
   // Updated projects with new categories
   const projects = [
     {
-      title: "Pet Care Website-Frondend",
+      title: "Pet Care Website",
       description: "User-friendly Pet Care website for caring your pets. This website is developed using html,css,javaScript.",
       image: petcare,
       category: "Web Development",
@@ -40,34 +43,34 @@ export default function Projects() {
       live: "https://ruvindya28.github.io/Pet-Care-Website-html-css-js/"
     },
     {
-      title: "Corporate Website",
-      description: "Responsive business website with CMS integration and contact forms",
-      image: "https://via.placeholder.com/400x250",
-      category: "Web Development",
+      title: "Railway Website Redesign", 
+      description: "Redesign in government railway website",
+      image: railway,
+      category:"UI/UX Design",
       github: "#",
-      live: "#"
+      live: "https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=0-1&p=f&t=7VnV8JVmi21uCgvg-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A3&show-proto-sidebar=1"
     },
     {
       title: "Travel Website",
       description: "Modern travel application interface with intuitive booking flow and animations",
-      image: "https://via.placeholder.com/400x250",
-      category: "UI/UX Design",
-      github: "#",
-      live: "#"
+      image: Cover8,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Travel_Agency-react",
+      live: "https://travel-agency-company.vercel.app/"
     },
     {
-      title: "Dashboard Design",
-      description: "Analytics dashboard with data visualization and customizable widgets",
-      image: "https://via.placeholder.com/400x250",
+      title: "Interial Website Design",
+      description: "Responsive website for interior design website",
+      image: interial,
       category: "UI/UX Design",
       github: "#",
-      live: "#"
+      live: "https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=SD8OYaqvDMyedSnb-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671"
     },
     {
-      title: "Fitness Tracker",
-      description: "Mobile app for tracking workouts, nutrition, and setting fitness goals",
+      title: "Resturant Website",
+      description: "Responsive website for resturant website",
       image: "https://via.placeholder.com/400x250",
-      category: "Mobile Development",
+      category: "Web Development",
       github: "#",
       live: "#"
     },
