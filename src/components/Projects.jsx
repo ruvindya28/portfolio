@@ -16,6 +16,11 @@ import petcare from "../assets/petcare.png";
 import railway from "../assets/railway.png";
 import Cover8 from "../assets/Cover8.png";
 import interial from "../assets/interial.png";
+import resturant from "../assets/resturant.png";
+import pastry from "../assets/pasty_shop.png";
+import pos from "../assets/pos.png";
+import clothing from "../assets/clothing.png";
+import student from "../assets/student.png";
 
 export default function Projects() {
   const [currentCategory, setCurrentCategory] = useState('All');
@@ -34,14 +39,7 @@ export default function Projects() {
 
   // Updated projects with new categories
   const projects = [
-    {
-      title: "Pet Care Website",
-      description: "User-friendly Pet Care website for caring your pets. This website is developed using html,css,javaScript.",
-      image: petcare,
-      category: "Web Development",
-      github: "https://github.com/ruvindya28/Pet-Care-Website-html-css-js",
-      live: "https://ruvindya28.github.io/Pet-Care-Website-html-css-js/"
-    },
+    
     {
       title: "Railway Website Redesign", 
       description: "Redesign in government railway website",
@@ -51,12 +49,60 @@ export default function Projects() {
       live: "https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=0-1&p=f&t=7VnV8JVmi21uCgvg-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A3&show-proto-sidebar=1"
     },
     {
-      title: "Travel Website",
+      title: "Resturant Website-React",
+      description: "Responsive website for resturant website",
+      image: resturant,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Resturant-website-React-JS",
+      live: "https://resturant-website-react-js.vercel.app/"
+    },
+    {
+      title: "POS System-TypeScript",
+      description: "pos system for fashion website",
+      image: pos,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/POS-System-React-TypeScript-",
+      live: "https://fashion-pos-system.netlify.app/"
+    },
+    {
+      title: "Travel Website-React",
       description: "Modern travel application interface with intuitive booking flow and animations",
       image: Cover8,
       category: "Web Development",
       github: "https://github.com/ruvindya28/Travel_Agency-react",
       live: "https://travel-agency-company.vercel.app/"
+    },
+    {
+      title: "Pet Care Website",
+      description: "User-friendly Pet Care website for caring your pets. This website is developed using html,css,javaScript.",
+      image: petcare,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Pet-Care-Website-html-css-js",
+      live: "https://ruvindya28.github.io/Pet-Care-Website-html-css-js/"
+    },
+    {
+      title: "Clothing Shop Website",
+      description: "Responsive website for clothing shop website",
+      image: clothing,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Clothing_website-Js",
+      live: "https://clothing-website-js.vercel.app/"
+    },
+    {
+      title: "Student Mangement System",
+      description: "Responsive website for student managment system",
+      image: student,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Student_Management-System-Js",
+      live: "https://student-management-system-js.vercel.app/"
+    },
+    {
+      title: "Pastry Shop Website",
+      description: "Responsive website for pastry shop website",
+      image: pastry,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Pastry-Shop-Website",
+      live: "https://pastry-shop-website.vercel.app/"
     },
     {
       title: "Interial Website Design",
@@ -66,14 +112,7 @@ export default function Projects() {
       github: "#",
       live: "https://www.figma.com/proto/uGk4f3lDhvrftT1YYv0ZWE/Interior-Design-Web-Site?node-id=1-671&p=f&t=SD8OYaqvDMyedSnb-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671"
     },
-    {
-      title: "Resturant Website",
-      description: "Responsive website for resturant website",
-      image: "https://via.placeholder.com/400x250",
-      category: "Web Development",
-      github: "#",
-      live: "#"
-    },
+    
     {
       title: "Food Delivery App",
       description: "On-demand food delivery application with real-time tracking and payment system",

@@ -2,16 +2,30 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import image from '../assets/image.png';
 import dp_figma from "../assets/dp_figma.png";
+import suhurusara from "../assets/suhurusara.jpg";
+import moratuwa from "../assets/moratuwa.jpg";
+import linkdln from "../assets/linkdin.jpg";
+import simply from "../assets/simply.jpg";
+import android from "../assets/android.png";
+import wordpress from "../assets/wordpress.png";
+import database from "../assets/database.png";
+import figma from "../assets/figma.png";
+import python from "../assets/phython.png";
+import mern from "../assets/mern.png";
+import react from "../assets/react.png";
+import pm from "../assets/PM.png";
+import mern2 from "../assets/mern2.png";
 
 export default function Education() {
   const [activeTab, setActiveTab] = useState('education');
   const [activeCategory, setActiveCategory] = useState('all');
   const [viewingCert, setViewingCert] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   
   // Refs for scrolling certificate rows
   const scrollContainerRefs = useRef({});
   
-  const certCategories = ['all', 'web development', 'design', 'mobile development'];
+  const certCategories = ['all'];
 
   
   const educationData = [
@@ -27,55 +41,95 @@ export default function Education() {
 
   const certificates = [
     {
-      title: "Full Stack Development",
-      provider: "Udemy",
-      year: "2023",
-      description: "Complete MERN Stack Developer Course",
-      category: "development",
-      certUrl: "#" // Add actual certificate URL here
-    },
-    {
-      title: "UI/UX Design",
+      title: "Introduction to Figma",
       provider: "DP Education",
+      year: "2024",
+      description: "Complete Figma Course for Beginners",
+      certUrl: "https://drive.google.com/file/d/1hDmzr4YrR4bdfv0J5ufeiA-QLV1UrStd/view?usp=sharing",
+      image: dp_figma,
+      certImage: figma, // Added certImage property for the actual certificate image
+    },
+    {
+      title: "Introduction to Mern stack",
+      provider: "SimplyLearn",
       year: "2025",
+      description: "Complete Mern Stack Course for Beginners",
+      certUrl: "https://drive.google.com/file/d/1xge1Y7k80M-r7K7D7IaAOcGwPE9xSa9j/view?usp=sharingusp=sharing",
+      image: simply,
+      certImage: mern, // Added certImage property for the actual certificate image
+    },
+    {
+      title:"Python for beginers",
+      provider: "Moratuwa Campus",
+      year: "2024",
       description: "Google UX Design Professional Certificate",
-      category: "design",
-      certUrl: "https://www.dpitcampus.lk/lms/mod/customcert/view.php?id=1749&downloadown=1",  
-      image: dp_figma
-    },
-    
-    {
-      title: "AWS Cloud Practitioner",
-      provider: "Amazon",
-      year: "2023",
-      description: "Cloud Computing Fundamentals",
-      category: "cloud",
-      certUrl: "#" // Add actual certificate URL here
+      certUrl: "https://drive.google.com/file/d/1etDCulrdzRacbuhwq6oK2rKyMifaDeG8/view?usp=drive_link",  
+      image: moratuwa,
+      certImage: python, // Added certImage property
     },
     {
-      title: "React Native Development",
-      provider: "Udemy",
-      year: "2023",
-      description: "Mobile App Development with React Native",
-      category: "development",
-      certUrl: "#" // Add actual certificate URL here
+      title: "Web Design Using Wordpress",
+      provider: "Suhurusara",
+      year: "2024",
+      description: "Wordpress development for beginners",
+      certUrl: "https://drive.google.com/file/d/1xO-BlyKv-cc5fUpzkOmm_xdJ7hB_upMJ/view?usp=drive_link",
+      image: suhurusara,
+      certImage: wordpress, // Added certImage property
     },
     {
-      title: "Advanced UI Design",
-      provider: "Figma",
-      year: "2023",
-      description: "Advanced UI Design Principles and Practices",
-      category: "design",
-      certUrl: "#" // Add actual certificate URL here
+      title: "React Development",
+      provider: "Dp Education",
+      year: "2025",
+      description: "Web application development with React Js",
+      certUrl: "https://drive.google.com/file/d/1hDmzr4YrR4bdfv0J5ufeiA-QLV1UrStd/view?usp=sharing",
+      image: dp_figma,
+      certImage: dp_figma, // Added certImage property
     },
     {
-      title: "Azure Fundamentals",
-      provider: "Microsoft",
-      year: "2023",
-      description: "Microsoft Azure Cloud Essentials",
-      category: "cloud",
-      certUrl: "#" // Add actual certificate URL here
-    }
+      title: "React Essential Training",
+      provider: "LinkedIn",
+      year: "2025",
+      description: "Web application development with React Js",
+      certUrl: "https://drive.google.com/file/d/1Y5PX7mJXpN5ynATXcZLWUf2IDroJphMa/view?usp=sharing",
+      image: linkdln,
+      certImage: react, // Added certImage property
+    },
+    {
+      title: " Mern Essential Training",
+      provider: "LinkedIn",
+      year: "2025",
+      description: "Complete Mern Stack Course for Beginners",
+      certUrl: "https://drive.google.com/file/d/1rK0brcd-w3qrbG376nBPNEgqk4kBIODx/view?usp=sharing",
+      image: linkdln,
+      certImage: mern2, // Added certImage property for the actual certificate image
+    },
+    {
+      title: "Mobile App Development",
+      provider: "SimplyLearn",
+      year: "2025",
+      description: "Android mobile application development",
+      certUrl: "https://drive.google.com/file/d/1WQZ6fPu6Hlt8En8aMzMQQ0NRIiRBWcOH/view?usp=sharing",
+      image: simply,
+      certImage: android,
+    },
+    {
+      title: "Database Mangement System",
+      provider: "Suhurusara",
+      year: "2024",
+      description: "Database Mangement System with MySql",
+      certUrl: "https://drive.google.com/file/d/1eNuQ9tdF8CtB6p4jFj1E7fAIVlYv-e9M/view?usp=sharing",
+      image: suhurusara,
+      certImage: database, // Added certImage property
+    },
+    {
+      title: "Project Mangement with AI",
+      provider: "Linkdln",
+      year: "2025",
+      description: "project management with using AI",
+      certUrl: "https://drive.google.com/file/d/1c0T_2Jh_hJFIiPzaGupFAggxFFtCZCla/view?usp=sharing",
+      image: linkdln,
+      certImage: pm, // Added certImage property
+    },
   ];
 
   // Group certificates by category
@@ -102,7 +156,12 @@ export default function Education() {
 
   // Function to open certificate view
   const openCertificate = (cert) => {
+    setIsLoading(true);
     setViewingCert(cert);
+    // Simulate loading time if needed
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
   };
 
   // Function to close certificate view
@@ -271,7 +330,7 @@ export default function Education() {
                     
                     <div className="flex-grow">
                       <div className="flex items-center mb-1">
-                        <div className=" overflow-hidden flex-shrink-0">
+                        <div className="overflow-hidden flex-shrink-0">
                           
                         </div>
                         <h3 className="font-semibold text-xl text-white">{edu.degree}</h3>
@@ -405,21 +464,7 @@ export default function Education() {
                       )}
                       
                       <div className="mb-4 flex items-center">
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center mr-3 border border-gray-600 overflow-hidden">
-                            <motion.svg 
-                              whileHover={{ rotate: 360 }}
-                              transition={{ duration: 1 }}
-                              className="w-5 h-5 text-pink-400" 
-                              fill="currentColor" 
-                              viewBox="0 0 20 20" 
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-12a4 4 0 100 8 4 4 0 000-8z" clipRule="evenodd" />
-                            </motion.svg>
-                          </div>
-                        </div>
+                        <img src={cert.image} className="w-12 h-12 rounded-full mr-4" alt={`${cert.provider} logo`} />
                         <div>
                           <h3 className="text-lg font-semibold text-white">{cert.title}</h3>
                           <p className="text-purple-400 text-sm">{cert.provider} • {cert.year}</p>
@@ -434,9 +479,6 @@ export default function Education() {
                         transition={{ delay: 0.3, type: "spring" }}
                         className="mt-4 flex justify-between items-center"
                       >
-                        <span className="px-2 py-1 bg-gray-700 text-xs rounded-full text-gray-300 border border-gray-600">
-                          {cert.category}
-                        </span>
                         
                         {/* View Certificate Button */}
                         <motion.button
@@ -465,12 +507,14 @@ export default function Education() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          onClick={closeCertificateView}  // Close when clicking outside the modal
         >
           <motion.div
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="bg-gray-800 rounded-lg p-6 max-w-2xl w-full relative border border-purple-500/30"
+            onClick={(e) => e.stopPropagation()}  // Prevent click from propagating
           >
             <button
               onClick={closeCertificateView}
@@ -484,19 +528,48 @@ export default function Education() {
             <h3 className="text-2xl font-bold text-white mb-2">{viewingCert.title}</h3>
             <p className="text-purple-400 mb-4">{viewingCert.provider} • {viewingCert.year}</p>
             
-            <div className="bg-gray-900 rounded-lg p-4 mb-6 aspect-video flex items-center justify-center">
-              {/* Certificate would be displayed here */}
-              <p className="text-gray-300 text-center">Certificate Preview</p>
+            <div className="bg-gray-900 rounded-lg p-4 mb-6 flex items-center justify-center">
+              {isLoading ? (
+                <div className="flex flex-col items-center justify-center py-12">
+                  <svg className="animate-spin h-8 w-8 text-purple-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <p className="text-gray-300 text-center">Loading certificate...</p>
+                </div>
+              ) : (
+                <div className="w-full">
+                  {/* Display the certificate image. Use certImage if available, otherwise use image */}
+                  <img 
+                    src={viewingCert.certImage || viewingCert.image} 
+                    alt={`${viewingCert.title} Certificate`} 
+                    className="w-full h-auto rounded-lg object-contain" 
+                  />
+                </div>
+              )}
             </div>
             
-            <div className="flex justify-end">
+            <div className="flex justify-between items-center mt-6">
+              <motion.button
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                onClick={closeCertificateView}
+                className="px-4 py-2 bg-gray-700 text-gray-300 rounded-full shadow-md hover:bg-gray-600 transition-all duration-300"
+              >
+                Close
+              </motion.button>
+              
               <a
                 href={viewingCert.certUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full shadow-md hover:shadow-purple-500/20 transition-all duration-300"
+                className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full shadow-md hover:shadow-purple-500/20 transition-all duration-300 flex items-center"
               >
-                Download Certificate
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                View Original
               </a>
             </div>
           </motion.div>
