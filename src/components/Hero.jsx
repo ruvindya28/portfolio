@@ -64,7 +64,7 @@ export default function Hero() {
   const handleDownloadCV = () => {
     const link = document.createElement('a');
     link.href = '/path-to-your-cv.pdf';
-    link.download = 'YourName-CV.pdf';
+    link.download = 'SachiniRuvindya-CV.pdf';
     link.click();
   };
 

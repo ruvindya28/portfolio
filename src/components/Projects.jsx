@@ -56,14 +56,7 @@ export default function Projects() {
       github: "https://github.com/ruvindya28/Resturant-website-React-JS",
       live: "https://resturant-website-react-js.vercel.app/"
     },
-    {
-      title: "POS System-TypeScript",
-      description: "pos system for fashion website",
-      image: pos,
-      category: "Web Development",
-      github: "https://github.com/ruvindya28/POS-System-React-TypeScript-",
-      live: "https://fashion-pos-system.netlify.app/"
-    },
+   
     {
       title: "Travel Website-React",
       description: "Modern travel application interface with intuitive booking flow and animations",
