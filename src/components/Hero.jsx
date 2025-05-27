@@ -149,9 +149,7 @@ export default function Hero() {
         >
           <TypeAnimation
             sequence={[
-              'Frontend Developer',
-              2000,
-              'Backend Developer',
+              'Full Stack Developer',
               2000,
               'UI/UX Designer',
               2000,
