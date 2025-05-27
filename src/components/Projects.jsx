@@ -21,6 +21,7 @@ import pastry from "../assets/pasty_shop.png";
 import pos from "../assets/pos.png";
 import clothing from "../assets/clothing.png";
 import student from "../assets/student.png";
+import netflix from "../assets/netflix.png";
 
 export default function Projects() {
   const [currentCategory, setCurrentCategory] = useState('All');
@@ -47,6 +48,14 @@ export default function Projects() {
       category:"UI/UX Design",
       github: "#",
       live: "https://www.figma.com/proto/H37RhU9k53bXiE3GOS4ixj/HCI-Project?node-id=0-1&p=f&t=7VnV8JVmi21uCgvg-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A3&show-proto-sidebar=1"
+    },
+     {
+      title: "Netflix Clone-React",
+      description: "Responsive website for netflix website",
+      image: netflix,
+      category: "Web Development",
+      github: "https://github.com/ruvindya28/Nelflix-Clone-React.git",
+      live: "https://nelflix-clone-react.vercel.app/login"
     },
     {
       title: "Resturant Website-React",

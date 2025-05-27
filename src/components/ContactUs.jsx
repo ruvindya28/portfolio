@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -41,27 +42,42 @@ export default function ContactSection() {
     message: ''
   });
 
+  const [result, setResult] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    const formDataSubmit = new FormData(event.target);
+    formDataSubmit.append("access_key", "7820d312-29df-4eab-9965-ac67de29ff99"); // Replace with your actual access key
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataSubmit
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult();
+      toast.success("Message sent successfully!");
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
 
   return (
     <section id="contact" className="py-24 bg-gray-900 relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptNiA2djZoNnYtNmgtNnptLTEyIDBoNnY2aC02di02em0xMiAwaDZ2NmgtNnYtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-      
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-purple-500/5 to-transparent" />
       <div className="absolute bottom-0 right-0 w-full h-64 bg-gradient-to-t from-pink-500/5 to-transparent" />
-      
+
       <div className="max-w-6xl mx-auto px-4 relative">
         <motion.div
           initial="hidden"
@@ -69,10 +85,7 @@ export default function ContactSection() {
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <motion.div 
-            variants={itemVariants} 
-            className="text-center mb-16"
-          >
+          <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text inline-block">
               Let's Connect
             </h2>
@@ -81,8 +94,8 @@ export default function ContactSection() {
               I'm always interested in new opportunities and collaborations.
             </p>
           </motion.div>
-          
-          {/* Contact Info Cards - Now at the top */}
+
+          {/* Contact Info Cards */}
           <motion.div 
             variants={containerVariants}
             className="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6"
@@ -97,8 +110,7 @@ export default function ContactSection() {
                 variants={floatVariants}
                 animate="animate"
                 className="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-purple-500 to-purple-300 transform origin-left group-hover:scale-x-100 transition-transform duration-300"
-              ></motion.div>
-              
+              />
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0.5 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -112,7 +124,7 @@ export default function ContactSection() {
               <h3 className="text-xl font-medium text-white mb-2">Email</h3>
               <p className="text-gray-400">ruvindyasachini6@gmail.com</p>
             </motion.div>
-            
+
             {/* Phone */}
             <motion.div 
               variants={itemVariants} 
@@ -123,8 +135,7 @@ export default function ContactSection() {
                 variants={floatVariants}
                 animate="animate"
                 className="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-pink-500 to-pink-300 transform origin-left group-hover:scale-x-100 transition-transform duration-300"
-              ></motion.div>
-              
+              />
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0.5 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -138,7 +149,7 @@ export default function ContactSection() {
               <h3 className="text-xl font-medium text-white mb-2">Phone</h3>
               <p className="text-gray-400">+94 70 586 4481</p>
             </motion.div>
-            
+
             {/* Location */}
             <motion.div 
               variants={itemVariants} 
@@ -149,8 +160,7 @@ export default function ContactSection() {
                 variants={floatVariants}
                 animate="animate"
                 className="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left group-hover:scale-x-100 transition-transform duration-300"
-              ></motion.div>
-              
+              />
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0.5 }}
                 whileInView={{ scale: 1, opacity: 1 }}
@@ -166,12 +176,9 @@ export default function ContactSection() {
               <p className="text-gray-400">Matara, Sri Lanka</p>
             </motion.div>
           </motion.div>
-          
+
           {/* Contact Form */}
-          <motion.div 
-            variants={itemVariants}
-            className="max-w-3xl mx-auto"
-          >
+          <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -180,13 +187,10 @@ export default function ContactSection() {
             >
               <div className="p-1 bg-gradient-to-r from-purple-500 to-pink-500">
                 <div className="bg-gray-800 p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={onSubmit} className="space-y-6">
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <motion.div 
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                      >
+                      <div>
                         <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">Full Name</label>
                         <input
                           type="text"
@@ -198,13 +202,8 @@ export default function ContactSection() {
                           className="w-full px-4 py-3 bg-gray-700/60 border-0 rounded-md text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300"
                           required
                         />
-                      </motion.div>
-                      
-                      <motion.div 
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                      >
+                      </div>
+                      <div>
                         <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">Email Address</label>
                         <input
                           type="email"
@@ -216,14 +215,9 @@ export default function ContactSection() {
                           className="w-full px-4 py-3 bg-gray-700/60 border-0 rounded-md text-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500/50 transition-all duration-300"
                           required
                         />
-                      </motion.div>
+                      </div>
                     </div>
-                    
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
+                    <div>
                       <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">Your Message</label>
                       <textarea
                         id="message"
@@ -235,14 +229,8 @@ export default function ContactSection() {
                         className="w-full px-4 py-3 bg-gray-700/60 border-0 rounded-md text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300"
                         required
                       ></textarea>
-                    </motion.div>
-                    
-                    <motion.div 
-                      className="flex justify-end"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                    >
+                    </div>
+                    <div className="flex justify-end">
                       <motion.button
                         type="submit"
                         whileHover={{ scale: 1.05 }}
@@ -251,7 +239,10 @@ export default function ContactSection() {
                       >
                         Send Message
                       </motion.button>
-                    </motion.div>
+                    </div>
+                    {result && (
+                      <p className="text-sm text-gray-300 mt-4">{result}</p>
+                    )}
                   </form>
                 </div>
               </div>
