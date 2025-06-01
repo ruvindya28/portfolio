@@ -21,7 +21,7 @@ import pastry from "../assets/pasty_shop.png";
 import pos from "../assets/pos.png";
 import clothing from "../assets/clothing.png";
 import student from "../assets/student.png";
-import netflix from "../assets/netflix.png";
+import netflix from "../assets/netflix.jpg";
 
 export default function Projects() {
   const [currentCategory, setCurrentCategory] = useState('All');
