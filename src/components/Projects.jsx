@@ -12,7 +12,7 @@ import {
   faPalette,
   faMobileScreen
 } from '@fortawesome/free-solid-svg-icons';
-import petcare from "../assets/petcare.png";
+import petcare from "../assets/petcare1.png";
 import railway from "../assets/railway.png";
 import Cover8 from "../assets/Cover8.png";
 import interial from "../assets/interial.png";
@@ -23,6 +23,10 @@ import clothing from "../assets/clothing.png";
 import student from "../assets/student.png";
 import netflix from "../assets/netflix.jpg";
 import FoodDelivery from "../assets/FoodDelivery.png";
+import wordpress from "../assets/wordpress.png";
+import wordpress1 from "../assets/wordpress1.png";
+import Travel from "../assets/Travel.jpg";
+
 
 export default function Projects() {
   const [currentCategory, setCurrentCategory] = useState('All');
@@ -79,7 +83,7 @@ export default function Projects() {
     {
       title: "Travel Website-React",
       description: "Modern travel application interface with intuitive booking flow and animations",
-      image: Cover8,
+      image: Travel,
       category: "Web Development",
       github: "https://github.com/ruvindya28/Travel_Agency-react",
       live: "https://travel-agency-company.vercel.app/"
@@ -130,6 +134,14 @@ export default function Projects() {
       description: "On-demand food delivery application with real-time tracking and payment system",
       image: "https://via.placeholder.com/400x250",
       category: "Mobile Development",
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Clothing Shop Website",
+      description: "Responsive website for clothing shop website",
+      image: wordpress1,
+      category: "Wordpress Development",
       github: "#",
       live: "#"
     }
