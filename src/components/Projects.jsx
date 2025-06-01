@@ -16,7 +16,7 @@ import petcare from "../assets/petcare1.png";
 import railway from "../assets/railway.png";
 import Cover8 from "../assets/Cover8.png";
 import interial from "../assets/interial.png";
-import resturant from "../assets/resturant.png";
+import resturant from "../assets/resturant.jpg";
 import pastry from "../assets/pasty_shop.png";
 import pos from "../assets/pos.png";
 import clothing from "../assets/clothing.png";
