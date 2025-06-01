@@ -22,6 +22,7 @@ import pos from "../assets/pos.png";
 import clothing from "../assets/clothing.png";
 import student from "../assets/student.png";
 import netflix from "../assets/netflix.jpg";
+import FoodDelivery from "../assets/FoodDelivery.png";
 
 export default function Projects() {
   const [currentCategory, setCurrentCategory] = useState('All');
@@ -29,18 +30,27 @@ export default function Projects() {
   const [isAnimating, setIsAnimating] = useState(false);
   
   // Updated categories to match your requirements
-  const categories = ['All', 'Web Development', 'UI/UX Design', 'Mobile Development'];
+  const categories = ['All', 'Web Development', 'UI/UX Design', 'Mobile Development','Wordpress Development'];
   
   // Icons for each category
   const categoryIcons = {
     'Web Development': faGlobe,
     'UI/UX Design': faPalette,
-    'Mobile Development': faMobileScreen
+    'Mobile Development': faMobileScreen,
+    'Wordpress Development':faGlobe, 
   };
 
   // Updated projects with new categories
   const projects = [
-    
+     {
+      title: "Food Delivery website-MERN", 
+      description: "MERN Stack Responsive website for food delivery website",
+      image: FoodDelivery,
+      category:"Web Development",
+      github: "https://github.com/ruvindya28/food-delivery-web-app.git",
+      live: "https://github.com/ruvindya28/food-delivery-web-app.git"
+     },
+
     {
       title: "Railway Website Redesign", 
       description: "Redesign in government railway website",
