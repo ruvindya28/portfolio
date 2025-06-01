@@ -61,12 +61,6 @@ const buttonVariants = {
 };
 
 export default function Hero() {
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/path-to-your-cv.pdf';
-    link.download = 'SachiniRuvindya_CV.pdf';
-    link.click();
-  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-32 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
@@ -174,18 +168,21 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <motion.button
+          
+          <motion.a
+            href="https://drive.google.com/file/d/1rQ_rN6sYO6ybD-86aern2igQSi4Cc19M/view?usp=sharing"
+            target="_blank"
+            download
             variants={buttonVariants}
             initial="initial"
             whileHover="hover"
             whileTap="tap"
-            onClick={handleDownloadCV}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-medium flex items-center mx-auto space-x-3 shadow-lg shadow-pink-500/30"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-medium flex items-center mx-auto space-x-3 shadow-lg shadow-pink-500/30 cursor-pointer"
           >
             <FontAwesomeIcon icon={faDownload} className="text-lg" />
             <span>Download CV</span>
-          </motion.button>
-          
+          </motion.a>
+
           <motion.button
             variants={buttonVariants}
             initial="initial"

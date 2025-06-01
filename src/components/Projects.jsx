@@ -23,7 +23,8 @@ import clothing from "../assets/clothing.png";
 import student from "../assets/student.png";
 import netflix from "../assets/netflix.jpg";
 import FoodDelivery from "../assets/FoodDelivery.png";
-import wordpress from "../assets/wordpress.png";
+import Luxelady from "../assets/luxelady.png";
+
 import wordpress1 from "../assets/wordpress1.png";
 import Travel from "../assets/Travel.jpg";
 
@@ -140,10 +141,10 @@ export default function Projects() {
     {
       title: "Clothing Shop Website",
       description: "Responsive website for clothing shop website",
-      image: wordpress1,
+      image: Luxelady,
       category: "Wordpress Development",
       github: "#",
-      live: "#"
+      live: "https://luxelady.free.nf/"
     }
   ];
 
