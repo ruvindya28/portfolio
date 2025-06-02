@@ -170,7 +170,7 @@ export default function Hero() {
         >
           
           <motion.a
-            href="https://drive.google.com/file/d/1rQ_rN6sYO6ybD-86aern2igQSi4Cc19M/view?usp=sharing"
+            href="https://drive.google.com/file/d/1JO3WqaNvqzEFsmskPkbPF7l-sdiRCkAn/view?usp=sharing"
             target="_blank"
             download
             variants={buttonVariants}
