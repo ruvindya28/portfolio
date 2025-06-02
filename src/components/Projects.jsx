@@ -26,7 +26,7 @@ import FoodDelivery from "../assets/FoodDelivery.png";
 import Luxelady from "../assets/luxelady.png";
 
 import wordpress1 from "../assets/wordpress1.png";
-import Travel from "../assets/Travel.jpg";
+import Travel from "../assets/travel.jpg";
 
 
 export default function Projects() {
