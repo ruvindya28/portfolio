@@ -47,7 +47,7 @@ export default function About() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text"
+            className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text"
           >
             About Me
           </motion.h2>
