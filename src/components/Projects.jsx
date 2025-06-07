@@ -24,7 +24,7 @@ import student from "../assets/student.png";
 import netflix from "../assets/netflix.jpg";
 import FoodDelivery from "../assets/FoodDelivery.png";
 import Luxelady from "../assets/luxelady.png";
-
+import Cosmatic from "../assets/cosmatic.jpg";
 import wordpress1 from "../assets/wordpress1.png";
 import Travel from "../assets/travel.jpg";
 
@@ -47,6 +47,14 @@ export default function Projects() {
 
   // Updated projects with new categories
   const projects = [
+     {
+      title: "Cosmatic website-MERN", 
+      description: "MERN Stack Responsive website for cosmatic website",
+      image: Cosmatic,
+      category:"Web Development",
+      github: "https://github.com/ruvindya28/crystal-beauty-clear-frontend.git",
+      live: "https://github.com/ruvindya28/crystal-beauty-clear-frontend.git"
+     },
      {
       title: "Food Delivery website-MERN", 
       description: "MERN Stack Responsive website for food delivery website",
