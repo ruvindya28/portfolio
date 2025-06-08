@@ -15,6 +15,7 @@ import mern from "../assets/mern.png";
 import react from "../assets/react.png";
 import pm from "../assets/PM.png";
 import mern2 from "../assets/mern2.png";
+import React1 from "../assets/react1.png";
 
 export default function Education() {
   const [activeTab, setActiveTab] = useState('education');
@@ -83,7 +84,7 @@ export default function Education() {
       description: "Web application development with React Js",
       certUrl: "https://drive.google.com/file/d/1hDmzr4YrR4bdfv0J5ufeiA-QLV1UrStd/view?usp=sharing",
       image: dp_figma,
-      certImage: dp_figma, // Added certImage property
+      certImage: React1, // Added certImage property
     },
     {
       title: "React Essential Training",
