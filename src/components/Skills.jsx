@@ -228,7 +228,7 @@ export default function Skills() {
       skills: [
         { name: 'Git', level: 90, icon: faGitAlt, color: "#F05032" },
         { name: 'npm', level: 85, icon: faNpm, color: "#CB3837" },
-        { name: 'Docker', level: 75, icon: faDocker, color: "#2496ED" },
+        
       ]
     }
   ];
