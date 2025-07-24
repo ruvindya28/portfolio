@@ -227,8 +227,7 @@ export default function Skills() {
       color: "#10b981", // Green for tools
       skills: [
         { name: 'Git', level: 90, icon: faGitAlt, color: "#F05032" },
-        { name: 'npm', level: 85, icon: faNpm, color: "#CB3837" },
-        
+        { name: 'npm', level: 85, icon: faNpm, color: "#CB3837" }, 
       ]
     }
   ];
