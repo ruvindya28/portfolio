@@ -218,8 +218,7 @@ export default function Skills() {
         { name: 'Figma', level: 85, icon: faFigma, color: "#F24E1E" },
         { name: 'Wireframing', level: 90, icon: faPencilRuler, color: "#FF6B6B" },
         { name: 'Color Theory', level: 80, icon: faSwatchbook, color: "#FF9F43" },
-        
-      ]
+        ]
     },
     {
       name: "Development Tools",
